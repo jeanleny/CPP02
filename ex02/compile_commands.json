@@ -1,0 +1,8 @@
+[
+{
+	"directory": "/home/lperis/Work/CommonCore/4th/CPP/CPP_02/ex02",
+	"arguments": ["c++", "-Wall", "-Werror", "-Wextra", "-std=c++98", "-MMD", "-MP", "-g", "-Iinclude", "-c", "src/main.cpp", "-o", "object/main.o"],
+	"file": "src/main.cpp",
+	"output": "object/main.o"
+}
+]
