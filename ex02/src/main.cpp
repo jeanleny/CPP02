@@ -65,4 +65,18 @@ int	main(void)
 		std::cout << "b1 is != b2" << std::endl;
 	if (b1 == b2)
 		std::cout << "b1 is == b2" << std::endl;
+
+	std::cout << "------- + --------" << std::endl;
+	Fixed result;
+	std::cout << "b1 = " << b1.toFloat() << std::endl;
+	std::cout << "b2 = " << b2.toFloat() << std::endl;
+
+	result = b1 + b2;
+	std::cout << "result b1 + b2: " << result << std::endl;
+
+	std::cout << "------- - --------" << std::endl;
+	std::cout << "b1 = " << b1.toFloat() << std::endl;
+	std::cout << "b2 = " << b2.toFloat() << std::endl;
+	result = b1 - b2;
+	std::cout << "result b1 - b2: " << result << std::endl;
 }

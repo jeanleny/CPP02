@@ -10,9 +10,8 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int nb)
 {
-	std::cout << "Int constructor called INITIALISATION IS NOT ON FIXED VALUE" << std::endl;
-	_value = nb;
-	//_value = nb << _fBits;
+	std::cout << "Int constructor called" << std::endl;
+	_value = nb *(1 << _fBits);
 }
 
 Fixed::Fixed(const float nb)
@@ -46,8 +45,16 @@ Fixed &Fixed::operator=(Fixed const & rhs)
 
 Fixed Fixed::operator+(Fixed const & rhs) const
 {
-	std::cout << "+ oppeeeratooor" << std::endl;
-	return (Fixed (this->_value + rhs._value));
+	Fixed	result;
+	result._value = this->_value + rhs._value;
+	return (result);
+}
+
+Fixed Fixed::operator-(Fixed const & rhs) const
+{
+	Fixed	result;
+	result._value = this->_value - rhs._value;
+	return (result);
 }
 
 bool	Fixed::operator>(Fixed const & rhs)
