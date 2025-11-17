@@ -31,6 +31,53 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
+
+ /*OVERLOAD_OPERATOR*/
+
+
+Fixed &Fixed::operator=(Fixed const & rhs)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &rhs)
+		this->_value = rhs._value;
+	return (*this);
+}
+
+bool	Fixed::operator>(Fixed const & rhs)
+{
+	return (this->_value > rhs._value);
+}
+
+bool	Fixed::operator<(Fixed const& rhs)
+{
+	std::cout<<"cmouinsse"<<std::endl;
+	return (!operator>(rhs) && !operator==(rhs));
+}
+
+bool	Fixed::operator<=(Fixed const& rhs)
+{
+	std::cout << "cmoinsse ou egale" << std::endl;
+	return (!(*this > rhs));
+}
+
+bool	Fixed::operator>=(Fixed const& rhs)
+{
+	std::cout << "cpluss ou egale" << std::endl;
+	return (!(*this < rhs));
+}
+
+bool	Fixed::operator==(Fixed const& rhs)
+{
+	std::cout << "ci egale" << std::endl;
+	return(this->_value == rhs._value);
+}
+
+std::ostream& operator<<(std::ostream& stream, Fixed const& rhs)
+{
+	stream << rhs.toFloat();
+	return (stream);
+}
+
 int	Fixed::getRawBits() const
 {
 	return (_value);
@@ -49,38 +96,4 @@ int		Fixed::toInt(void) const
 float	Fixed::toFloat(void) const
 {
 	return ((float)_value / (1 << _fBits));
-}
-
-Fixed &Fixed::operator=(Fixed const & rhs)
-{
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &rhs)
-		this->_value = rhs._value;
-	return (*this);
-}
-
-bool	Fixed::operator>(Fixed const & rhs)
-{
-	std::cout << "operator >" << std::endl;
-	if (this->_value > rhs._value)
-		return (true);
-	return (false);
-}
-
-bool	Fixed::operator<(Fixed const& rhs)
-{
-	return (*this > rhs);
-}
-
-
-bool	Fixed::operator<=(Fixed const& rhs)
-{
-	return (!(*this > rhs));
-}
-
-
-std::ostream& operator<<(std::ostream& stream, Fixed const& rhs)
-{
-	stream << rhs.toFloat();
-	return (stream);
 }

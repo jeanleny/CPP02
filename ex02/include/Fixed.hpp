@@ -17,9 +17,9 @@ class Fixed
 	bool	operator>(Fixed const &rhs); 
 	bool	operator<(Fixed const &rhs); 
 	bool	operator<=(Fixed const &rhs); 
-/*	bool	operator>=(Fixed const &rhs); 
+	bool	operator>=(Fixed const &rhs); 
 	bool	operator==(Fixed const &rhs); 
-	bool	operator!=(Fixed const &rhs); 
+	/*bool	operator!=(Fixed const &rhs); 
 	Fixed operator+(Fixed const &rhs) const; 
 	Fixed operator-(Fixed const &rhs) const; 
 	Fixed operator*(Fixed const &rhs) const; 
