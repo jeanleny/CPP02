@@ -10,8 +10,9 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int nb)
 {
-	std::cout << "Int constructor called" << std::endl;
-	_value = nb << _fBits;
+	std::cout << "Int constructor called INITIALISATION IS NOT ON FIXED VALUE" << std::endl;
+	_value = nb;
+	//_value = nb << _fBits;
 }
 
 Fixed::Fixed(const float nb)
@@ -43,6 +44,12 @@ Fixed &Fixed::operator=(Fixed const & rhs)
 	return (*this);
 }
 
+Fixed Fixed::operator+(Fixed const & rhs) const
+{
+	std::cout << "+ oppeeeratooor" << std::endl;
+	return (Fixed (this->_value + rhs._value));
+}
+
 bool	Fixed::operator>(Fixed const & rhs)
 {
 	return (this->_value > rhs._value);
@@ -50,27 +57,29 @@ bool	Fixed::operator>(Fixed const & rhs)
 
 bool	Fixed::operator<(Fixed const& rhs)
 {
-	std::cout<<"cmouinsse"<<std::endl;
 	return (!operator>(rhs) && !operator==(rhs));
 }
 
 bool	Fixed::operator<=(Fixed const& rhs)
 {
-	std::cout << "cmoinsse ou egale" << std::endl;
-	return (!(*this > rhs));
+	return (!operator>(rhs));
 }
 
 bool	Fixed::operator>=(Fixed const& rhs)
 {
-	std::cout << "cpluss ou egale" << std::endl;
-	return (!(*this < rhs));
+	return (!operator<(rhs));
 }
 
 bool	Fixed::operator==(Fixed const& rhs)
 {
-	std::cout << "ci egale" << std::endl;
 	return(this->_value == rhs._value);
 }
+
+bool	Fixed::operator!=(Fixed const& rhs)
+{
+	return(!operator==(rhs));
+}
+
 
 std::ostream& operator<<(std::ostream& stream, Fixed const& rhs)
 {
