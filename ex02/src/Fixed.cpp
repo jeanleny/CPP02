@@ -63,7 +63,7 @@ Fixed Fixed::operator*(Fixed const & rhs) const
 {
 	Fixed	result;
 
-	long tmp = this->_value * rhs._value;
+	long tmp = (long)this->_value * rhs._value;
 	result._value = tmp / (1 << _fBits);
 	return (result);
 }
@@ -98,7 +98,7 @@ Fixed Fixed::operator--(int)
 	Fixed tmp = *this;
 
 	this->_value--;
-	return(*this);
+	return(tmp);
 
 }
 
@@ -142,28 +142,28 @@ bool	Fixed::operator!=(Fixed const& rhs) const
 
 Fixed &Fixed::min(Fixed& nb1, Fixed& nb2)
 {
-	if (nb1 < nb2)
+	if (nb1 <= nb2)
 		return (nb1);
 	return(nb2);
 }
 
 Fixed &Fixed::max(Fixed& nb1, Fixed& nb2)
 {
-	if (nb1 > nb2)
+	if (nb1 >= nb2)
 		return (nb1);
 	return(nb2);
 }
 
 const Fixed &Fixed::min(Fixed const& nb1,Fixed const& nb2)
 {
-	if (nb1 > nb2)
+	if (nb1 <= nb2)
 		return (nb1);
 	return(nb2);
 }
 
 const Fixed &Fixed::max(const Fixed& nb1, const Fixed& nb2)
 {
-	if (nb1 < nb2)
+	if (nb1 >= nb2)
 		return (nb1);
 	return(nb2);
 }
@@ -186,7 +186,7 @@ void	Fixed::setRawBits(int const raw)
 
 int		Fixed::toInt(void) const
 {
-	return (_value << _fBits);
+	return (_value / (1 << _fBits));
 }
 
 float	Fixed::toFloat(void) const

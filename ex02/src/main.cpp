@@ -2,6 +2,7 @@
 
 int	main(void)
 {
+	/*
 	Fixed a1(1);
 	Fixed a2(2);
 	std::cout << "------- < : > --------" << std::endl;
@@ -105,5 +106,5 @@ int	main(void)
 	std::cout << "max : " << Fixed::max(c1, c2) << std::endl;
 	std::cout << "const1 : " << const1 << " const2 : " << const2 << std::endl;
 	std::cout << "const min : " << Fixed::min(const1, const2) << std::endl;
-	std::cout << "const max : " << Fixed::max(const1, const2) << std::endl;
+	std::cout << "const max : " << Fixed::max(const1, const2) << std::endl;*/
 }
