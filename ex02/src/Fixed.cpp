@@ -108,34 +108,34 @@ Fixed &Fixed::operator--()
 	return (*this);
 }
 
-bool	Fixed::operator>(Fixed const & rhs)
+bool	Fixed::operator>(Fixed const & rhs) const
 {
 	if (this->_value > rhs._value && !operator==(rhs))
 		return (true);
 	return (false);
 }
 
-bool	Fixed::operator<(Fixed const& rhs)
+bool	Fixed::operator<(Fixed const& rhs) const
 {
 	return (!operator>(rhs) && !operator==(rhs));
 }
 
-bool	Fixed::operator<=(Fixed const& rhs)
+bool	Fixed::operator<=(Fixed const& rhs) const
 {
 	return (!operator>(rhs));
 }
 
-bool	Fixed::operator>=(Fixed const& rhs)
+bool	Fixed::operator>=(Fixed const& rhs) const
 {
 	return (!operator<(rhs));
 }
 
-bool	Fixed::operator==(Fixed const& rhs)
+bool	Fixed::operator==(Fixed const& rhs) const
 {
 	return(this->_value == rhs._value);
 }
 
-bool	Fixed::operator!=(Fixed const& rhs)
+bool	Fixed::operator!=(Fixed const& rhs) const
 {
 	return(!operator==(rhs));
 }
@@ -154,16 +154,16 @@ Fixed &Fixed::max(Fixed& nb1, Fixed& nb2)
 	return(nb2);
 }
 
-const Fixed &Fixed::min(const Fixed& nb1, const Fixed& nb2)
+const Fixed &Fixed::min(Fixed const& nb1,Fixed const& nb2)
 {
-	if (&nb1 > &nb2)
+	if (nb1 > nb2)
 		return (nb1);
 	return(nb2);
 }
 
 const Fixed &Fixed::max(const Fixed& nb1, const Fixed& nb2)
 {
-	if (&nb1 < &nb2)
+	if (nb1 < nb2)
 		return (nb1);
 	return(nb2);
 }
