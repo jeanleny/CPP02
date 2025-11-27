@@ -10,4 +10,10 @@ int	main(void)
 	std::cout << obj1.getRawBits() << std::endl;
 	std::cout << obj2.getRawBits() << std::endl;
 	std::cout << obj3.getRawBits() << std::endl;
+	obj1.setRawBits(5);
+	obj2.setRawBits(8);
+	obj3.setRawBits(7);
+	std::cout << obj1.getRawBits() << std::endl;
+	std::cout << obj2.getRawBits() << std::endl;
+	std::cout << obj3.getRawBits() << std::endl;
 }

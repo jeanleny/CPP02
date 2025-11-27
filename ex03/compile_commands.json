@@ -1,0 +1,26 @@
+[
+{
+	"directory": "/home/lperis/Work/CommonCore/4th/CPP/CPP_02/ex03",
+	"arguments": ["c++", "-Wall", "-Werror", "-Wextra", "-std=c++98", "-MMD", "-MP", "-g", "-Iinclude", "-c", "src/main.cpp", "-o", "object/main.o"],
+	"file": "src/main.cpp",
+	"output": "object/main.o"
+},
+{
+	"directory": "/home/lperis/Work/CommonCore/4th/CPP/CPP_02/ex03",
+	"arguments": ["c++", "-Wall", "-Werror", "-Wextra", "-std=c++98", "-MMD", "-MP", "-g", "-Iinclude", "-c", "src/Fixed.cpp", "-o", "object/Fixed.o"],
+	"file": "src/Fixed.cpp",
+	"output": "object/Fixed.o"
+},
+{
+	"directory": "/home/lperis/Work/CommonCore/4th/CPP/CPP_02/ex03",
+	"arguments": ["c++", "-Wall", "-Werror", "-Wextra", "-std=c++98", "-MMD", "-MP", "-g", "-Iinclude", "-c", "src/Point.cpp", "-o", "object/Point.o"],
+	"file": "src/Point.cpp",
+	"output": "object/Point.o"
+},
+{
+	"directory": "/home/lperis/Work/CommonCore/4th/CPP/CPP_02/ex03",
+	"arguments": ["c++", "-Wall", "-Werror", "-Wextra", "-std=c++98", "-MMD", "-MP", "-g", "-Iinclude", "-c", "src/bsp.cpp", "-o", "object/bsp.o"],
+	"file": "src/bsp.cpp",
+	"output": "object/bsp.o"
+}
+]
